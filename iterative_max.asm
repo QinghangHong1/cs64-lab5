@@ -116,7 +116,7 @@ Exit:
 
 IterativeMax:
     #TODO: write your code here, $a0 stores the address of the array, $a1 stores the length of the array
-    addiu $sp, $sp, -20
+    addi $sp, $sp, -20
     sw $s0, 0($sp)
     sw $s1, 4($sp)
     sw $s2, 8($sp)
@@ -125,7 +125,7 @@ IterativeMax:
     move $s0, $a0 # address of array
     move $s1, $a1 # length of array
     li $s2, 0 # loop variable
-    lw $s4, 0($t0) # current max 
+    lw $s4, 0($s0) # current max 
 loop:
     beq $s2, $s1, end
     sll $t3, $s2, 2
